@@ -1,0 +1,269 @@
+body {
+	padding: 0; margin: 0;
+	font-family: 'Helvetica';
+	color: $fontColor;
+	background-color: $bgColor;
+}
+
+/*\
+|*|---------------------------------------- General
+\*/
+
+.input {
+	height: 22px;
+	padding-left: 10px;
+	border: $borderPx solid $borderColor; border-radius: $borderRad;
+	background-color: $bgColor;
+	color: $fontColor;
+}
+
+.select {
+	height: 28px;
+	border-radius: $borderRad;
+	margin-bottom: 3px;
+}
+
+input, button {
+	outline: none;
+}
+
+input[type="submit"], input[type="button"], button {
+	background-color: $bgColor;
+	border: $borderPx solid $borderColor; border-radius: $borderRad;
+	cursor: pointer;
+	color: $fontColor;
+	font-size: 14px;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover, button:hover {
+	background-color: $menuColor;
+}
+
+input[type="submit"]:disabled {
+	background-color: $menuColor;
+	cursor: not-allowed;
+}
+
+button {
+	height: 36px;
+}
+
+a {
+	text-decoration: none;
+	color: $borderColor;
+	font-style: italic;
+}
+
+hr {
+	border: 1px solid $borderColor;
+}
+
+.msg {
+	margin-left: 25px;
+	font-size: 14px;
+}
+
+.msg-success { 
+	color: $successColor;
+}
+
+.msg-error { 
+	background-color: $delimiter;
+    border-radius: $borderRad;
+    color: $fontColor;
+    padding: 10px;
+    margin: 10px;
+}
+
+#firstMsg {
+	width: 100%;
+	text-align: center;
+	font-size: 16px;
+}
+
+#firstMsg p {
+	min-width: 490px;
+	border: $borderPx solid $borderColor; border-radius: $borderRad;
+	margin: 10px; padding: 10px;
+}
+
+/*\
+|*|---------------------------------------- Success / Danger
+\*/
+
+.btn-danger {
+	background-color: $failColor;
+	border: $borderPx solid $borderFailColor;
+	color: $fontColor;
+}
+
+.btn-danger:hover {
+	background-color: $borderFailColor;
+}
+
+.btn-success {
+	background-color: $successColor;
+	border: $borderPx solid $borderSuccessColor;
+	color: $fontColor;
+}
+
+.btn-success:hover {
+	background-color: $borderSuccessColor;
+}
+
+/*\
+|*|---------------------------------------- Cookies
+\*/
+
+#cookies {
+	width: calc(100% - 250px);
+	height: 48px;
+	background-color: #1A2530;
+	color: $fontColor;
+	opacity: 0.8;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: inline-flex;
+	@media screen and (max-width: $permut) {
+		width: calc(100% - 50px);
+	}
+}
+
+#cookies p {
+	width: calc(100% - 75px);
+	padding: 0 15px;
+	margin-top: 5px;
+}
+
+#cookies a {
+	color: #e74c3c;
+}
+
+/*\
+|*|---------------------------------------- Notification
+\*/
+
+#boxMsg {
+	position: absolute;
+	width: 300px; height: 25px;
+	margin-left: auto; margin-right: auto; 
+	left: 0; right: 0; top: -25px;
+	background-color: $successColor;
+	border-radius: 0 0 $borderRad $borderRad;
+	text-align: center;
+	opacity: 0;
+	display: none;
+	z-index: 100;
+	@include f_transition(all, 0.5s);
+}
+
+#boxMsg.error {
+	background-color: $failColor;
+}
+
+#boxMsg.in {
+    opacity: 1;
+    top: 0px;
+}
+
+/*\
+|*|---------------------------------------- Fenetre modale
+\*/
+
+.box {
+	position: absolute;
+	width: 400px; height: 200px;
+	margin-right: auto; margin-left: auto;
+	top: 60px; right: 0; left: 0;
+	border: 1px solid $borderColor; border-radius: 3px;
+	z-index: 2;
+	display: none;
+}
+
+.box .box-content {
+	width: 100%; height: 100%;
+}
+
+.box .box-title {
+	height: 30px;
+	border-bottom: 1px solid $delimiter;
+	padding-left: 10px; padding-top: 10px;
+	background-color: $menuColor;
+}
+
+.box .box-body {
+	min-height: 49%;
+	padding: 10px;
+	background-color: $bgColor;
+}
+
+.box .box-footer {
+	height: 40px;
+	border-top: 1px solid $delimiter;
+	background-color: $menuColor;
+}
+
+.box .box-footer input {
+	margin: 2px;
+	float: right;
+	height: 36px;
+}
+
+.activeBack {
+	position: fixed;
+	width: 100%; height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	@include f_transition(all, 0.2s, linear);
+	z-index: 1;
+}
+
+/*\
+|*|---------------------------------------- Tooltips
+\*/
+
+.tooltip {
+	color: $fontColor;
+	background-color: $bgWave;
+	position: absolute;
+	z-index: 99;
+	font-size: 12px;
+	border-radius: 3px;
+	padding: 4px;
+}
+
+/*\
+|*|---------------------------------------- Loader Ajax
+\*/
+
+#ajaxLoader {
+	position: absolute;
+	background-color: $bgWave;
+	width: auto; height: 24px;
+	top: calc(50% - 12px); left: calc(50% - 100px);
+	border-radius: 3px;
+	text-align: center;
+	padding-top: 7px; padding-left: 5px; padding-right: 5px;
+	color: $fontColor;
+	margin: auto;
+	display: none;
+	z-index: 10;
+	animation: blink 0.5s linear infinite alternate;
+	-webkit-animation: blink 0.5s linear infinite alternate;
+	-moz-animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink { 
+    from { color: white; }  
+    top { color: transparent; }  
+}
+
+@-webkit-keyframes blink { 
+    from { color: white; }  
+    top { color: transparent; }  
+}
+
+@-moz-keyframes blink { 
+    from { color: white; }  
+    top { color: transparent; }  
+}

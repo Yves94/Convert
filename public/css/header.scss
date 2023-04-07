@@ -1,0 +1,332 @@
+/*\
+|*|---------------------------------------- Menu Horizontal
+\*/
+
+#header {
+	width: 100%; height: 50px;
+	background-color: $menuColor;
+	border-bottom: $borderPx solid $delimiter;
+	position: absolute;
+	z-index: 1;
+}
+
+/* Zone du Logo */
+
+#logo {
+	width: 250px; height: 44px;
+	position: absolute;
+	top: 0; left: 0;
+	font-size: 29px;
+	padding-top: 6px;
+	background-color: $borderColor;
+	color: $fontColor;
+	cursor: pointer;
+	@media screen and (max-width: $permut) {
+		width: 50px;
+		color: transparent;
+		font-size: 8px;
+	}
+}
+
+#logo img {
+	width: 40px; height: 40px;
+	margin-left: 15px;
+	@media screen and (max-width: $permut) {
+		margin-left: 5px;
+	}
+}
+
+#logo div {
+	position: absolute;
+	top: 0;
+	width: 92%; height: 50px;
+	text-align: right;
+	line-height: 50px;
+}
+
+#beta {
+	position: absolute;
+	margin-left: 250px;
+	height: 35px;
+	width: 70px;
+	text-align: center;
+	padding-top: 15px;
+	background-color: $delimiter;
+	font-weight: bold;
+	@media screen and (max-width: $permut) {
+		margin-left: 50px;
+	}
+
+}
+
+/* Menu de gauche */
+
+#content {
+	height: 50px; width: 100%;
+}
+
+#content > * {
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+/* Recherche */
+
+#search {
+	float: right;
+	cursor: pointer;
+}
+
+#search i {
+	position: absolute;
+	padding-top: 6px; padding-left: 7px;
+	font-size: 20px;
+}
+
+#search input {
+	width: 0px; height: 30px;
+	padding-left: 25px;
+	@include f_transition();
+}
+
+#tagList {
+	margin-top: -27px; margin-left: 25px;
+}
+
+.tag {
+	margin: 0 3px;
+	background-color: $borderColor;
+	border-radius: $borderRad;
+	padding: 2px 5px;
+}
+
+/* Connexion */
+
+#connection, #user, #logout, #significativeNumber, #api, #history {
+	float: right;
+	margin-left: 10px; margin-right: 10px;
+	height: 36px;
+}
+
+/* Chiffres significatifs */
+
+#significativeNumber {
+	height: 36px;
+}
+
+/* Deconnexion */
+
+#logout {
+	margin-left: 0px;
+}
+
+/*\
+|*|---------------------------------------- Menu Vertical
+\*/
+
+// Menu de gauche
+#hideScroll, #filtre {
+    width: 250px; height: auto;
+    overflow: hidden;
+    position: absolute;
+    top: 52px; bottom: 80px;
+    @include f_transition(width);
+    @media screen and (max-width: $permut) {
+		width: 50px;
+	}
+}
+
+#filtre {
+ 	@media screen and (max-width: $permut) {
+		width: 100%;
+		top: 0;
+		height: calc(100% - 110px);
+		position: relative;
+	}
+}
+
+#category, #filtreContent {
+	width: 262px; height: 100%;
+    overflow-y: scroll;
+    padding-right: 17px;
+}
+
+#filtreContent {
+	@media screen and (max-width: $permut) {
+		width: 100%;
+		padding: 0;
+		overflow-y: auto;
+		max-height: 350px;
+	}
+}
+
+#category a {
+	color: $fontColor;
+	font-style: inherit;
+}
+
+#category [class^="ion-"]:before {
+	width: 35px;
+	font-size: 22px;
+}
+
+#category .nameCategory {
+	cursor: pointer;
+	background-color: $menuColor;
+	color: $fontColor;
+	padding-top: 7px; padding-bottom: 7px;
+	font-size: 15px;
+}
+
+#category .nameCategory:hover {
+	background-color: $bgColor;
+}
+
+#category .active {
+	background-color: $bgColor;
+	box-shadow: 4px 0px 0px 0px $delimiter inset;
+}
+
+#category .nameCategory .posCategory {
+	height: 26px;
+	padding-left: 10px;
+	@media screen and (max-width: $permut) {
+		padding-left: 15px;
+	}
+}
+
+#category .nameCategory .badge {
+	float: right;
+	position: inherit;
+	margin-right: 12px;
+	font-size: 15px;
+	background-color: $borderColor;
+	padding: 3px;
+	border-radius: $borderRad;
+	color: $bgColor;
+}
+
+#category .nameCategory .lock span:before {
+	font-size: 16px;
+}
+
+#category .nameCategory .lock {
+	width: 13px;
+}
+
+/* Categorie connecte */
+#category .nameCategory .connectIcon {
+	background-color: $delimiter;
+	color: $fontColor;
+}
+
+/* Fenetre modale */
+
+#boxConnexion .box-body label, #boxConnexion .box-body input {
+	width: 47%;
+	display: inline-block;
+	margin-bottom: 3px;
+}
+
+/*\
+|*|---------------------------------------- Outils
+\*/
+
+#tools {
+	position: absolute;
+	width: 250px; height: 28px;
+	bottom: 50px;
+	border-top: 2px solid $delimiter;
+	background-color: $menuColor;
+	@media screen and (max-width: $permut) {
+		width: 50px;
+	}
+}
+
+#tools > div {
+	width: 250px;
+	height: 100%;
+	float: left;
+	text-align: center;
+	line-height: 28px;
+	cursor: pointer;
+	@media screen and (max-width: $permut) {
+		width: 50px;
+	}
+}
+
+#tools > div:hover {
+	background-color: $bgColor;
+}
+
+#tools .filtreLabel {
+	margin-left: 10px;
+	@media screen and (max-width: $permut) {
+		display: none;
+	}
+}
+
+#filtre .title {
+	color: $borderColor;
+	font-size: 20px;
+	width: 100%;
+	border-bottom: $borderPx solid $borderColor;
+	text-align: center;
+}
+
+#filtre .filtreLibelle {
+	padding: 5px;
+	cursor: pointer;
+}
+
+#filtre .filtreLibelle:hover {
+	background-color: $menuColor;
+}
+
+#filtre .filtreLibelle span {
+	display: none;
+	float: right;
+	margin-right: 5px;
+}
+
+/*\
+|*|---------------------------------------- Footer
+\*/
+
+#footer {
+	position: absolute;
+	left: 0; bottom: 0;
+	width: 240px; height: 43px;
+	border-top: 2px solid $delimiter;
+	background-color: $menuColor;
+	color: $fontColor;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	@media screen and (max-width: $permut) {
+		width: 40px;
+	}
+}
+
+#footer a {
+	color: $fontColor;
+	font-style: normal;
+}
+
+.footerSign {
+	display: none;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 6px;
+	cursor: pointer;
+	@media screen and (max-width: $permut) {
+		display: block;
+	}
+}
+
+#footer span {
+	@media screen and (max-width: $permut) {
+		display: none;
+	}
+}

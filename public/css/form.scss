@@ -1,0 +1,86 @@
+.input-group span {
+	position: absolute;
+	margin-left: 10px;
+	margin-top: 6px;
+	font-size: 20px;
+}
+
+.input-group input {
+	padding-left: 30px;
+	height: 30px;
+}
+
+.input-group select {
+	height: 36px;
+}
+
+#account {
+	margin-top: 2px;
+	height: calc(100% - 2px);
+}
+
+#profile input[type="submit"] {
+	width: 25%;
+}
+
+/* profile */
+#profile {
+	width: calc(50% - 21px);
+	float: left;
+	padding: 10px;
+}
+
+#profile .input-group, #feedBack .input-group {
+	text-align: center;
+}
+
+/* feedBack */
+#feedBack {
+	width: calc(50% - 20px);
+	height: calc(100% - 20px);
+	float: right;
+	border-left: 1px solid $borderColor;
+	padding: 10px;
+}
+
+.userTitle {
+	font-size: 18px;
+	line-height: 25px;
+	border-bottom: 2px solid $borderColor;
+	margin-bottom: 10px;
+}
+
+#account #feedBack input[type="text"], #account #profile input[type="text"],
+#account #profile input[type="password"], #account #profile input[type="email"] {
+	margin-bottom: 10px;
+	width: calc(50% - 30px);
+}
+
+#account #feedBack input[type="file"] {
+	margin-bottom: 10px;
+	padding-left: 0px;
+	width: 50%;
+}
+
+#account #feedBack textarea {
+	margin-bottom: 10px;
+	width: 48%; height: 50px;
+}
+
+#connectForm {
+	position: absolute;
+	top: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+}
+
+#connectForm .input-group {
+	margin: 5px 0;
+}
+
+.register {
+	display: block;
+}

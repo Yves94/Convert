@@ -1,0 +1,26 @@
+$fontColor: #FFF;
+$bgColor: #34495E;
+$borderColor: #1A2530;
+$menuColor: #2C3E50;
+
+$delimiter: #E74C3C;
+
+$stripedColor: #213448;
+
+$borderPx: 2px;
+$borderRad: 3px;
+
+$failColor: #E74C3C;
+$borderFailColor: #FC5D5B;
+$successColor: #28935F;
+$borderSuccessColor: #218650;
+
+$varExist: #FFE700;
+
+$bgWave: rgba(0, 0, 0, 0.6);
+
+$permut: 816px;
+
+@mixin f_transition($element: all, $time: 0.3s, $move: ease) {
+	transition: $element $time $move; -webkit-transition: $element $time $move; -moz-transition: $element $time $move;
+}

@@ -1,0 +1,12 @@
+# If module Rewrite enabled
+<IfModule mod_rewrite.c>
+    RewriteEngine On 
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php
+</IfModule>
+
+# Protect config.ini
+<Files ./config.ini>
+    Order Allow,Deny
+    Deny from all
+</Files>
